@@ -5,9 +5,11 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>See all Friends!</Text>
+        <Text>
+          You have {this.props.screenProps.currentFriends.length} Friends
+        </Text>
         <Button
-          title="Go to Friends"
+          title="Add Some Friends"
           onPress={() => this.props.navigation.navigate("Friends")}
         />
       </View>
