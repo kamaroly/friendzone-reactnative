@@ -1,20 +1,12 @@
 import React from "react";
-import Home from "./src/app/components/Home";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { View, Text } from "react-native";
+import AppNavigator from "./src/app/navigation/AppNavigator";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Home />
-    </View>
-  );
-}
+const AppContainer = createAppContainer(AppNavigator);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#1e375d",
-    alignItems: "center",
-    justifyContent: "center"
+export default class App extends React.Component {
+  render() {
+    return <AppContainer />;
   }
-});
+}
